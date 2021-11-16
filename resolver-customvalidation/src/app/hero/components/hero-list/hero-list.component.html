@@ -1,0 +1,16 @@
+<div class="hero-container">
+    <table>
+        <tr>
+            <th>Hero Name</th>
+            <th>Hero Power</th>
+        </tr>
+        <tr *ngFor="let hero of heros">
+            <td>{{hero.name}}</td>
+            <td>{{hero.power}}</td>
+        </tr>
+    </table>
+    <br>
+    <div>
+        <button (click)="registerHero()">Register</button>
+    </div>
+</div>
