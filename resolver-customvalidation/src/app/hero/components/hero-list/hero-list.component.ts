@@ -9,6 +9,7 @@ import { Hero } from '../../shared/interface/hero.interface';
 })
 export class HeroListComponent {
 
+  headers: string[] = ["name", "power"]
   heros!: Hero[];
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {

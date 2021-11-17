@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HeroRegisterComponent } from './components/hero-register/hero-register.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -13,8 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule,
-    ReactiveFormsModule
+    SharedModule
   ],
   exports: [
     HeroListComponent,

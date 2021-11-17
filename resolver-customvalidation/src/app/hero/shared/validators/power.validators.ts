@@ -5,4 +5,6 @@ export function invalidPower(control: FormControl): ValidationErrors | null {
     if (value.length <= 3)
         return { invalidPower: { value: control.value } }
     return null
+
+    
 }
