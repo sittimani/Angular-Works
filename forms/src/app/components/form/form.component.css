@@ -1,0 +1,13 @@
+label,
+span {
+    display: block;
+    margin: 10px;
+}
+
+button {
+    margin: 10px;
+}
+
+.error-message {
+    color: red;
+}
