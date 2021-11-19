@@ -1,0 +1,54 @@
+<h3>Template Form</h3>
+
+<form (ngSubmit)="f.valid && onSubmit()" #f="ngForm" [appMismatch]="[ 'password', 'confirmpassword']">
+    <table>
+        <tr>
+            <td> <label for="firstname">First Name </label></td>
+            <td> <input adminSelector type="text" id="firstname" name="firstname" #firstname="ngModel" [(ngModel)]="model.firstname" required> </td>
+            <td class="error-message" *ngIf="firstname?.touched">
+                <span *ngIf="firstname?.errors?.required"> Required</span>
+                <span *ngIf="firstname?.errors?.admin">admin is not allowed</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td> <label for="lastname">Last Name </label></td>
+            <td> <input adminSelector type="text" id="lastname" name="lastname" #lastname="ngModel" minlength="5" [(ngModel)]="model.lastname" required> </td>
+            <td class="error-message" *ngIf="lastname?.touched">
+                <span *ngIf="lastname?.errors?.required">last name is required</span>
+                <span *ngIf="lastname?.errors?.minlength">minlength error</span>
+                <span *ngIf="lastname?.errors?.admin">admin is not allowed</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td> <label for="email">Email </label></td>
+            <td> <input type="text" id="email" name="email" #email="ngModel" [(ngModel)]="model.email" emailValidator required> </td>
+            <td class="error-message" *ngIf="email?.touched">
+                <span *ngIf="email?.errors?.required">Email is required</span>
+                <span *ngIf="email?.errors?.email">Invalid Email Address</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td> <label for="password">password </label></td>
+            <td> <input type="password" id="password" name="password" #password="ngModel" [(ngModel)]="model.password" required> </td>
+            <td class="error-message" *ngIf="password?.touched">
+                <span *ngIf="password?.errors?.required">Password is required</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td> <label for="confirmpassword">Confirm password </label></td>
+            <td> <input type="password" id="confirmpassword" name="confirmpassword" #confirmpassword="ngModel" [(ngModel)]="model.confirmpassword" required> </td>
+            <td class="error-message" *ngIf="confirmpassword?.touched">
+                <span *ngIf="confirmpassword?.errors?.required">Confirm Password is required</span>
+                <span *ngIf="confirmpassword?.errors?.misMatch">Password mismatch</span>
+            </td>
+        </tr>
+
+        <tr>
+            <button type="submit">Submit</button>
+        </tr>
+    </table>
+</form>
