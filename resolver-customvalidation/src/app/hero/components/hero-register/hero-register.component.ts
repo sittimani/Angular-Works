@@ -28,16 +28,12 @@ export class HeroRegisterComponent {
   saveHero() {
     if (this.register.valid)
       this.heroService.saveHero(this.register.value).subscribe(result => {
-        this.router.navigate([""])
+        this.router.navigate(["hero-list"])
       })
   }
 
   getControl(name: string): FormControl {
     return this.register.get(name) as FormControl;
-  }
-
-  showHeroList() {
-    this.router.navigate([""])
   }
 
 }
