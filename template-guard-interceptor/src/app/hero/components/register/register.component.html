@@ -1,0 +1,15 @@
+<form #form="ngForm" (ngSubmit)="form.valid && onSubmit()">
+    <div>
+        <input type="text" name="hero" placeholder="Hero Name" [(ngModel)]="model.hero" #hero="ngModel" required>
+    </div>
+
+    <div>
+        <input type="text" name="power" placeholder="Hero Power" [(ngModel)]="model.power" #power="ngModel" required>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+        <button type="button" (click)="goToHero()">Go to hero</button>
+    </div>
+
+</form>
