@@ -1,0 +1,34 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+
+    <div>
+        <label for="firstname ">First Name </label>
+        <input type="text " id="firstname " name="firstname " formControlName="firstname">
+        <div class="error-message" *ngIf="controllers.firstname?.touched">
+            <span *ngIf="controllers.firstname?.errors?.required"> Required</span>
+            <span *ngIf="controllers.firstname?.errors?.admin"> Admin is reserved name</span>
+            <span *ngIf="controllers.firstname?.errors?.maxLength">first name should be maximum 10 letters</span>
+        </div>
+    </div>
+
+    <div>
+        <label for="lastname ">Last Name </label>
+        <input type="text " id="lastname " name="lastname " formControlName="lastname">
+        <div class="error-message" *ngIf="controllers.lastname?.touched">
+            <span *ngIf="controllers.lastname?.errors?.required">last name is required</span>
+            <span *ngIf="controllers.lastname?.errors?.minLength">last name should be minimum 1 letter</span>
+        </div>
+    </div>
+
+    <div>
+        <label for="email ">Email </label>
+        <input type="text " id="email " name="email " formControlName="email">
+        <div class="error-message" *ngIf="controllers.email?.touched">
+            <span *ngIf="controllers.email?.errors?.required">Email is required</span>
+            <span *ngIf="controllers.email?.errors?.email">Invalid email address</span>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
