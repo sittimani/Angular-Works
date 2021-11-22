@@ -1,0 +1,30 @@
+<form (ngSubmit)="submit()">
+    <table>
+        <tr>
+            <td colspan="2">Hero Register</td>
+        </tr>
+        <tr>
+            <td>Hero Name</td>
+            <td>
+                <input type="text" [(ngModel)]="model.name" name="name">
+            </td>
+        </tr>
+        <tr>
+            <td>Hero Power</td>
+            <td>
+                <input type="text" [(ngModel)]="model.power" name="power">
+            </td>
+        </tr>
+        <tr>
+            <td>Hero Movie</td>
+            <td>
+                <input type="text" [(ngModel)]="model.movie" name="movie">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,11 @@
+<table>
+    <tr>
+        <td>Name</td>
+        <td>Team</td>
+    </tr>
+    <tr *ngFor="let member of members; index as i;">
+        <td>{{member.name}}</td>
+        <td>{{member.team}}</td>
+        <td><button (click)="remove(i)">remove {{i}}</button></td>
+    </tr>
+</table>
