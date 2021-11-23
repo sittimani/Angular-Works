@@ -1,0 +1,7 @@
+<div *ngIf="isLoggedIn">
+    <li><a routerLink="employer-list">Employer list</a></li>
+    <li><a routerLink="employee-list">Employee list</a></li>
+    <li><a (click)="logout()">Logout</a></li>
+</div>
+<hr>
+<router-outlet></router-outlet>
