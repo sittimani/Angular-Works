@@ -1,0 +1,8 @@
+<app-table [members]="members" (updatedMembers)="updatedMembers($event)"></app-table>
+
+<hr>
+
+<ng-container *ngFor="let member of members">
+    <app-display [member]="member"></app-display>
+    <hr>
+</ng-container>
