@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
+import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../../shared/interface/employee.interface';
 import { EmployeeService } from '../../shared/service/employee.service';
 
@@ -9,19 +10,20 @@ import { EmployeeService } from '../../shared/service/employee.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-  headers = ["name", "team", "mailId"]
+
+  headers = ["name", "team", "mailId", "alternateMailId"]
   items!: Employee[]
 
-  constructor(private employeeService: EmployeeService) {
-    this.items = this.employeeService.getEmployees()
+  constructor(private employeeService: EmployeeService, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
+    this.activatedRoute.data.subscribe(data => {
+      this.items = data.employees
+    })
   }
 
   delete(index: number) {
-    console.log(index);
-    
     this.employeeService.removeEmployee(index)
   }
 

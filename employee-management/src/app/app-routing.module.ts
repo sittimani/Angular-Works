@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/shared/guard/auth.guard';
+
 import { EmployeeListComponent } from './employee/components/employee-list/employee-list.component';
+import { EmployeeResolver } from './core/shared/resolver/employee.resolver';
+import { EmployerResolver } from './core/shared/resolver/employer.resolver';
+import { EmployeeListComponent } from './employee/components/employee-list/employee-list.component';
+import { AddEmployeeComponent } from './employer/components/add-employee/add-employee.component';
 import { EmployerListComponent } from './employer/components/employer-list/employer-list.component';
 import { LoginComponent } from './user-management/components/login/login.component';
 
@@ -13,11 +18,23 @@ const routes: Routes = [
   {
     path: "employer-list",
     component: EmployerListComponent,
-    canActivate: [AuthGuard]
+
+    canActivate: [AuthGuard],
+    resolve: {
+      employers: EmployerResolver
+    }
   },
   {
     path: "employee-list",
     component: EmployeeListComponent,
+    canActivate: [AuthGuard],
+    resolve: {
+      employees: EmployeeResolver
+    }
+  },
+  {
+    path: "add-employee",
+    component: AddEmployeeComponent,
     canActivate: [AuthGuard]
   }
 ];
