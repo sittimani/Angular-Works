@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router';
 import { Employee } from '../../shared/interface/employee.interface';
 import { EmployeeService } from '../../shared/service/employee.service';
@@ -9,6 +9,7 @@ import { EmployeeService } from '../../shared/service/employee.service';
   styleUrls: ['./employee-list.component.css']
 })
 export class EmployeeListComponent implements OnInit {
+
 
   headers = ["name", "team", "mailId", "alternateMailId"]
   items!: Employee[]

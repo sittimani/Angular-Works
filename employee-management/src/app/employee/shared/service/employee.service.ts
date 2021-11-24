@@ -10,8 +10,10 @@ export class EmployeeService {
     {
       name: "mani",
       team: "MEAN",
+
       mailId: "manikandan.sasikumar@aspiresys.com",
       alternateMailId: ["manikanansitti@gmail.com", "manikandan4515@gmail.com"]
+
     },
     {
       name: "yasin",

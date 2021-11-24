@@ -3,4 +3,5 @@ export interface Employee {
     team: string,
     mailId: string,
     alternateMailId: string[]
+
 }

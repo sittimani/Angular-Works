@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from './core/shared/guard/auth.guard';
+
+import { EmployeeListComponent } from './employee/components/employee-list/employee-list.component';
 import { EmployeeResolver } from './core/shared/resolver/employee.resolver';
 import { EmployerResolver } from './core/shared/resolver/employer.resolver';
 import { EmployeeListComponent } from './employee/components/employee-list/employee-list.component';
@@ -16,6 +18,7 @@ const routes: Routes = [
   {
     path: "employer-list",
     component: EmployerListComponent,
+
     canActivate: [AuthGuard],
     resolve: {
       employers: EmployerResolver

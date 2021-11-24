@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ActivatedRoute } from '@angular/router';
+
 import { Employer } from '../../shared/interface/employer.interface';
 import { EmployerService } from '../../shared/service/employer.service';
 
@@ -15,6 +17,7 @@ export class EmployerListComponent implements OnInit {
   headers = ["name", "email", "team", "experience"]
   items!: Employer[]
 
+
   constructor(private employerService: EmployerService, private activatedRoute: ActivatedRoute) {
     // this.items = this.employerService.getEmployers()
   }
@@ -23,6 +26,7 @@ export class EmployerListComponent implements OnInit {
     this.activatedRoute.data.subscribe(data => {
       this.items = data.employers
     })
+
   }
 
 }
